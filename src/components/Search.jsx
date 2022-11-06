@@ -1,24 +1,31 @@
 import { React, useState } from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DetailsRows from "./DetailsRows";
 
 import "../App.css";
 
 function Search() {
+  const [searchInput, setSearchInput] = useState("");
+  let handleInputChange = (e) => {
+    var lowerCase = e.target.value.toLowerCase();
+    setSearchInput(lowerCase);
+  };
+
   return (
-    <div className="main">
-
-      {/* <div className="search">
-        <input type="textfield"
-        className="SearchBar"
-        placeholder="Search name or email"
-
+    <>
+      <div className="search-bar">
+        <FontAwesomeIcon icon="fa-regular fa-magnifying-glass" />
+        <input
+          type="text"
+          name="search"
+          id="search-bar"
+          placeholder="Search Name or Email"
+          onChange={handleInputChange}
         />
-      </div> */}
-       <span className='search-bar'  >
-    <i className="fa fa-search" aria-hidden="true"></i>
-    <input placeholder="&#xF002" ></input>
- </span>
-    </div>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <DetailsRows input={searchInput} />
+    </>
   );
 }
 
