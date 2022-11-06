@@ -15,6 +15,8 @@ function Search() {
     <>
       <div className="search-bar">
         <FontAwesomeIcon icon="fa-regular fa-magnifying-glass" />
+        {/* <i className="fas fa-magnifying-glass"></i> */}
+
         <input
           type="text"
           name="search"
@@ -22,7 +24,6 @@ function Search() {
           placeholder="Search Name or Email"
           onChange={handleInputChange}
         />
-        <i class="fa fa-search" aria-hidden="true"></i>
       </div>
       <DetailsRows input={searchInput} />
     </>

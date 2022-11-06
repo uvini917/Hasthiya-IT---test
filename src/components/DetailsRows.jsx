@@ -6,7 +6,10 @@ function DetailsRows(props) {
     if (props.input === "") {
       return item;
     } else {
-      return item.text.toLowerCase().includes(props.input);
+      const result = item.Name.toLowerCase().includes(props.input);
+      if (result == false) {
+        return item.Email.toLowerCase().includes(props.input);
+      } else return result;
     }
   });
   return selected.map((i) => (
